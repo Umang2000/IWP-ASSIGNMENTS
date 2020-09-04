@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>jQuery</title>
+      <H1>This is annimation</H1>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
+      <!-- fadeOut fadeIn -->
+      <script>
+         $(document).ready(function(){
+           $(".btn1").click(function(){
+             $("p1").fadeOut();
+           });
+           $(".btn2").click(function(){
+             $("p1").fadeIn();
+           });
+         });
+      </script>
+      
+      <!-- Show Hide -->
+      <script>
+         $(document).ready(function(){
+           $("#hide").click(function(){
+             $("p2").hide();
+           });
+           $("#show").click(function(){
+             $("p2").show();
+           });
+         });
+      </script>
+
+      <!-- Add And remove -->
+      <script>
+        $(document).ready(function(){
+          $("#btn1").click(function(){
+            $("p3").append(" <b>Appended text</b>.");
+          });
+        
+          $("#btn2").click(function(){
+            $("ol").append("<li>Appended item</li>");
+          });
+        });
+     </script>
+     <script>
+        $(document).ready(function(){
+          $("#btn3").click(function(){
+            $("li").remove();
+          });
+        });
+     </script>
+
+     <!-- CSS -->
+     <script>
+      $(document).ready(function(){
+        $("button3").click(function(){
+          alert("Background color = " + $("p").css("background-color"));
+        });
+      });
+   </script>
+      
+      <!--Dimension -->
+      <script>
+         $(document).ready(function(){
+           $("button").click(function(){
+             var txt = "";
+             txt += "Width of div: " + $("#div1").width() + "</br>";
+             txt += "Height of div: " + $("#div1").height();
+             $("#div1").html(txt);
+           });
+         });
+      </script>
+      <style>
+         #div1 {
+         height: 100px;
+         width: 300px;
+         padding: 10px;
+         margin: 3px;
+         border: 1px solid blue;
+         background-color: lightblue;
+         }
+      </style>
+
+      
+      <!--Traversing Methods-->
+      <script>
+         $(document).ready(function() {
+         $(".top").add(".middle").addClass("selected");
+         });
+         
+      </script>
+      <style>
+         .selected { color:green; }
+      </style>
+      <script>
+         $(document).ready(function(){
+            $("div").children(".designed").addClass("blue");
+         });
+      </script>
+      <style>
+         .blue { color:blue; }
+      </style>
+      
+      
+   </head>
+
+
+   <body>
+      <!-- fadeOut fadeIn -->
+      <p1>This paragraph will fadeIn and fadeOut according to the button clicked.</p1>
+      <button class="btn1">Fade out</button>
+      <button class="btn2">Fade in</button>
+      <hr>
+      
+      
+      <!-- Show Hide -->
+      <p2>"Hide" button will make me disappear.</p2>
+      <button id="hide">Hide</button>
+      <button id="show">Show</button><br>
+      <hr>
+      
+      
+      <!-- Add And remove -->
+      <p3>This is paragraph 1.</p3>
+      <p3>This is paragraph 2.</p3>
+      <ol>
+         <li>List item 1</li>
+         <li>List item 2</li>
+         <li>List item 3</li>
+      </ol>
+      <button id="btn1">Append text</button>
+      <button id="btn2">Append List item</button>
+      <button id="btn3">Remove List Items</button>
+
+
+      <!-- CSS -->
+      <h2>This is CSS Styling in Jquery</h2>
+      <p4 style="background-color:#ff0000">
+      This paragraph is with red background.</p>
+      <p4 style="background-color:#00ff00">
+      This paragraph is with green background.</p>
+      <p4 style="background-color:#0000ff">
+      This paragraph is with blue background.</p>
+      
+
+
+      <!--dimension -->
+         <div id="div1"></div>
+         <br>
+      <button>Display dimensions of div</button>
+      <br>
+      <p5>width() - returns the width of an element.</p5><br>
+      <p5>height() - returns the height of an element.</p5>
+      <div class="traverse">
+         <ul>
+            <li class = "above">list item 0</li>
+            <li class = "selected">list item 1</li>
+            <li class = "selected">list item 2</li>
+            <li class = "selected">list item 3</li>
+            <li class = "selected">list item 4</li>
+            <li class = "bottom">list item 5</li>
+            <li class = "bottom">list item 6</li>
+            <li class = "below">list item 7</li>
+         </ul>
+      </div>
+      <div>
+         <span>Hello</span>
+         <p class = "designed">How are you ?</p>
+         <div class = "designed">This page was designed by using jQuery</div>
+         <p class = "biggest">Bye</p>
+      </div>
+   </body>
+</html>
